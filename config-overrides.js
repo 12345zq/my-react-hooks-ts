@@ -9,7 +9,7 @@ const {
 const webpack = require("webpack")
 const path = require("path")
 const ESLintPlugin = require("eslint-webpack-plugin")
-process.env.BROWSER = "none"
+process.env.BROWSER = "true"
 process.env.PORT = 8888
 const addLessStyle=() => (config)=>{
     const loaders = config.module.rules.find(rule => Array.isArray(rule.oneOf)).oneOf;

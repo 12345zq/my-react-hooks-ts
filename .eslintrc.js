@@ -33,6 +33,12 @@ module.exports = {
         "prettier/prettier":"off",
         "react/display-name":"off",
         "@typescript-eslint/no-explicit-any":"off",
+        "@typescript-eslint/ban-types":"off",
+        "@typescript-eslint/no-unused-vars":"off",
+        "import/no-anonymous-default-export":"off",
+        "react-hooks/exhaustive-deps":"off",
+        "@typescript-eslint/no-var-requires":"off",
+        "no-useless-escape":"off",
         "no-console":process.env.NODE_ENV === "production" ? "error" : "off",
         "no-debugger":process.env.NODE_ENV === "production" ? "error" : "off"
     }

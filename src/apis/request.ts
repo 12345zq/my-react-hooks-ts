@@ -8,7 +8,7 @@ enum states {
   SUCCESS = 'SUCCESS',
   ERROR = 'ERROR'
 }
-interface ResponseFrom {
+export interface ResponseFrom {
   data ?: any,
   list ?: any,
   msg: states
@@ -29,7 +29,8 @@ axios.interceptors.request.use(
     return Promise.reject(error)
   }
 )
-const request = (options:any):Promise<ResponseFrom>=>{
+// axios.defaults.baseURL = process.env.REACT_APP_BASE_URL
+const request = (options:any):Promise<ResponseFrom> => {
   const axiosOptions = {
     transformResponse:[(data: any) => data],
     headers:{
@@ -39,14 +40,12 @@ const request = (options:any):Promise<ResponseFrom>=>{
     timeout:400000,
     paramsSerializer: (params: any) => qs.stringify(params),
     baseURL: process.env.REACT_APP_BASE_URL,
-    ...options
-  }
-  return new Promise((resole)=>{(resolve:Function,reject:Function) => {
+    ...options}
+  return new Promise((resolve:Function,reject:Function) => {
     axios.request(axiosOptions)
     .then((res:any)=>{
       resolve({
-        ...JsonParse(res.data),
-        msg:states.SUCCESS
+        data: JsonParse(res)
       })
     })
     .catch(error => {
@@ -55,7 +54,7 @@ const request = (options:any):Promise<ResponseFrom>=>{
         msg:states.ERROR
       })
     })
-  }})
+  })
 }
 
 export const httpPost = (
