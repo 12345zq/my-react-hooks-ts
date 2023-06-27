@@ -27,10 +27,6 @@ const routesOrder = [
     ]
   },
   {
-    path:'/',
-    element:<Navigate to="/search"/>
-  },
-  {
     path:'/list',
     element:<OrderList/>
   },

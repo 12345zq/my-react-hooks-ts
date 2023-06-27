@@ -1,4 +1,5 @@
-import OrderApi, { QueryTableType } from "@/apis/order/OrderApi";
+import { QueryTableType } from "@/apis/order/OrderApi";
+import {OrderApi} from "@/apis"
 import { ResponseFrom } from "@/apis/request";
 import { Button, Form, FormInstance, Input } from "antd";
 import React, { FC, ReactElement, useEffect, useRef, useState } from "react";
