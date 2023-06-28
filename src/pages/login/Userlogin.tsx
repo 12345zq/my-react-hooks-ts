@@ -1,6 +1,7 @@
 import {UserApi} from "@/apis";
 import { Button, Checkbox, Form, Input, Layout } from "antd";
 import React, { FC, ReactElement, useState } from "react";
+import "@/assets/CSS/common.less"
 interface loginType  {
   userName:string,
   userPassword:string,
@@ -16,7 +17,9 @@ const Login:FC = ():ReactElement => {
     <>
       <Layout>
         <div className="login-container">
-          <div className="login-left"></div>
+          <div className="login-left">
+            login-left
+          </div>
           <div className="login-right">
             <Form
               name="basic"
